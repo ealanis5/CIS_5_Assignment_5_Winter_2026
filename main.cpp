@@ -33,7 +33,12 @@ int main() {
 	*/
 	//----------------------------------------------------------------------------------------
 
-
+    students[0] = { 1010923, "Alice", 85.5 };
+	students[1] = { 1028908, "Bob", 92.0 };
+	students[2] = { 1031291, "Charlie", 78.0 };
+	students[3] = { 1042342, "Diana", 92.8 };
+	students[4] = { 1056780, "Ethan", 68.5 };
+	count = 5; 
 
 
 
@@ -96,6 +101,15 @@ void printMenu() {
 void highestGrade(Student students[], int count)
 {
 	// TODO: Print out all the highest grade in the array
+	int aryIndex = 0;
+	float highest = students[0].studentGrades;
+	for (int i = 1; i < count; i++) {
+		if (students[i].studentGrades > highest) {
+			highest = students[i].studentGrades;
+			aryIndex = i;
+		}
+	}
+	cout << "Highest Grade: " << highest << " by " << students[aryIndex].studentName << endl;
 
 	// Here is a simple check to ensure your code does not break
 	if (count == 0) {
@@ -106,17 +120,63 @@ void highestGrade(Student students[], int count)
 void lowestGrade(Student students[], int count)
 {
 	// TODO: Print out all the lowest grade in the array
-}
+	int aryIndex = 0;
+	float lowest = students[0].studentGrades;
+	for (int i = 1; i < count; i++) {
+		if (students[i].studentGrades < lowest) {
+			lowest = students[i].studentGrades;
+			aryIndex = i;
+		}
+	}
+	cout << "Lowest Grade: " << lowest << " by " << students[aryIndex].studentName << endl;
 
+	// Here is a simple check to ensure your code does not break
+	if (count == 0) {
+		cout << "No students in the record.\n";
+		return;
+	}
+}
 void averageGrade(Student students[], int count)
 {
 	// TODO: Print out the average grade of the students
+	float sum = 0.0;
+	for (int i = 0; i < count; i++) {
+		sum += students[i].studentGrades;
+	}
+	float average = (count > 0) ? (sum / count) : 0;
+	cout << "Average Grade: " << average << endl;
+
+	// Here is a simple check to ensure your code does not break
+	if (count == 0) {
+		cout << "No students in the record.\n";
+		return;
+	}
 }
 void printStudentId(Student students[], int count)
 {
 	// TODO: Print out all the students id in the array
+	cout << "Student IDs:\n";
+	for (int i = 0; i < count; i++) {
+		cout << students[i].studentId << endl;
+	}
+
+	// Here is a simple check to ensure your code does not break
+	if (count == 0) {
+		cout << "No students in the record.\n";
+		return;	
+}
 }
 void printStudentName(Student students[], int count)
 {
 	// TODO: Print out all the students name in the array
+	cout << "Student Names:\n";
+	for (int i = 0; i < count; i++) {
+		cout << students[i].studentName << endl;
+}
+	
+	// Here is a simple check to ensure your code does not break
+	if (count == 0) {
+		cout << "No students in the record.\n";
+		return;
+	}
 }
