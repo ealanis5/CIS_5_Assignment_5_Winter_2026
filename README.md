@@ -5,7 +5,7 @@ Goal: Fill out the menu -> the functions at the bottom to complete the menu!
 
 Scenario: You are a professor that is in charge of a class and you want to find a way to organize / manage the class to make life easier on you. 
 
-youtube/link
+youtube/https://youtu.be/oRIeYkuAO3M
 
 Tasks:
 
